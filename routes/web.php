@@ -23,6 +23,5 @@ Route::get('/docs', function () {
     return view('docs');
 });
 
-Route::get('/others', function () {
-    return view('others');
-});
+Route::get('/devices', 'DevicesController@index');
+Route::get('/devices/{device}', 'DevicesController@show');

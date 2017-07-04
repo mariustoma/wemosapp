@@ -1,43 +1,11 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- CSS -->
-        <link href="{{ url('/') }}/css/general.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Lights
-                </div>
-
-                <div class="links">
-                    <a href="{{ url('/') }}">Home</a>
-                    <a href="{{ url('/docs') }}">Documentation</a>
-                    <a href="{{ url('/lights') }}">Lights</a>
-                    <a href="{{ url('/others') }}">Others</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('content')
+<div class="list-group">
+	<a href="#" class="list-group-item active"> Cras justo odio </a>
+	<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+	<a href="#" class="list-group-item">Morbi leo risus</a>
+	<a href="#" class="list-group-item">Porta ac consectetur ac</a>
+	<a href="#" class="list-group-item">Vestibulum at eros</a>
+</div>
+@endsection
