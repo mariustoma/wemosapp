@@ -15,11 +15,13 @@ class CreateLights extends Migration
     {
         Schema::create('lights', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type', ['mansarda', 'parter', 'parinti', 'centrala', 'afara'])->default('mansarda');
+            $table->enum('type', ['mansarda', 'parter', 'parinti', 'centrala', 'afara'])->default('mansarda');
             $table->string('room', 100);
             $table->tinyInteger('number', false, true)->default(1);
             $table->integer('floor', false, true)->default(0);
-            $table->timestamps();
+            $table->dateTime('date_added')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->tinyInteger('flag_disabled', false, true)->default(0);
+            $table->tinyInteger('flag_deleted', false, true)->default(0);
         });
     }
 

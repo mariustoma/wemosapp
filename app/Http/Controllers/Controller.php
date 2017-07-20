@@ -9,5 +9,20 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
+	
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+//     public function __construct()
+//     {
+//     	app('view')->composer('layouts.master', function ($view) {
+// 	    	$action = app('request')->route()->getAction();
+	    	
+// 	    	$controller = class_basename($action['controller']);
+	    	
+// 	    	list($controller, $action) = explode('@', $controller);
+	    	
+// 	    	$view->with(compact('controller', 'action'));
+//     	});
+//     }
+    
 }

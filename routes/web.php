@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+	$title = 'Home Automation';
+    return view('index', compact('title'));
 });
 
-Route::get('/lights', function () {
-    return view('lights');
-});
+Route::get('/devices', 'Devices@index');
+Route::get('/devices/{device}', 'Devices@show');
 
-Route::get('/docs', function () {
-    return view('docs');
-});
+Route::get('/lights', 'Lights@index');
+Route::get('/docs', 'Docs@index');
 
-Route::get('/devices', 'DevicesController@index');
-Route::get('/devices/{device}', 'DevicesController@show');
+Route::get('/users', 'Users@index');
+Route::get('/users/{user}', 'Users@show');
+Route::get('/profile', 'Users@profile');

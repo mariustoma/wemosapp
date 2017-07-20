@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevices extends Migration
+class CreateUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDevices extends Migration
      */
     public function up()
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type', ['wemos','odroid','raspi','mobile','desktop','laptop'])->default('desktop');
-            $table->string('title', 200);
+            $table->string('name', 100);
+            $table->string('email', 100);
+            $table->string('phone', 30);
+            $table->string('password', 100);
             $table->dateTime('date_added')->default(DB::raw('CURRENT_TIMESTAMP'));
-            
-            //$table->timestamps();
         });
     }
 
@@ -30,6 +30,6 @@ class CreateDevices extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('users');
     }
 }

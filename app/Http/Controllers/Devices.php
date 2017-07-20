@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Device;
 
-class DevicesController extends Controller
+class Devices extends Controller
 {
     
 	public function index()
