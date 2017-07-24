@@ -11,6 +11,6 @@ class Docs extends Controller
 		$title = 'Documentation';
 		$description = 'This page contains home automation documentation.';
 		
-		return view('docs.index', compact('title', 'description'));
+		return view('pages.docs.index', compact('title', 'description'));
 	}
 }

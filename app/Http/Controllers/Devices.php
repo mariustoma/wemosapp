@@ -14,7 +14,7 @@ class Devices extends Controller
 		
 		$devices = Device::all();
 		
-		return view('devices.index', compact('title', 'description', 'devices'));
+		return view('pages.devices.index', compact('title', 'description', 'devices'));
 	}
 	
 	//public function show($id)
@@ -23,7 +23,7 @@ class Devices extends Controller
 		$title = 'Device Details';
 		$description = 'This page contains home device details.';
 		
-		return view('devices.show', compact('title', 'description', 'device'));
+		return view('pages.devices.show', compact('title', 'description', 'device'));
 	}
 	
 }

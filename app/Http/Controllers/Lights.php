@@ -12,7 +12,7 @@ class Lights extends Controller
 		$title = 'Lights';
 		$description = 'This page contains lights.';
 		
-		return view('lights.index', compact('title', 'description'));
+		return view('pages.lights.index', compact('title', 'description'));
 	}
 	
 }

@@ -1,6 +1,10 @@
-@extends('layout')
+@extends('layouts.master')
 
 @section('content')
+<hr>
+<div class="text-right">
+	<a class="btn btn-default" href="/users/create" role="button">Create New User</a>
+</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -10,6 +14,8 @@
 			<th>E-mail</th>
 			<th>Phone</th>
 			<th>Date Added</th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +27,8 @@
 			<td>{{$user->email}}</td>
 			<td>{{$user->phone}}</td>
 			<td>{{$user->date_added}}</td>
+			<td><a class="btn btn-default" href="/users/create" role="button">Edit</a></td>
+			<td><a class="btn btn-default" href="/users/create" role="button">Delete</a></td>
 		</tr>
 		@endforeach
 	</tbody>
